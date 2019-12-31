@@ -57,6 +57,14 @@
             <artifactId>guava</artifactId>
             <version>28.1-jre</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.44.Final</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

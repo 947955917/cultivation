@@ -1,6 +1,7 @@
 package com.programming.cultivation.hessian;
 
 import com.caucho.hessian.io.*;
+import com.programming.cultivation.base.Book;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

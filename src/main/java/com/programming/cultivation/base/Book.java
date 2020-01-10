@@ -1,4 +1,6 @@
-package com.programming.cultivation.hessian;
+package com.programming.cultivation.base;
+
+import com.programming.cultivation.poi.common.anno.Excel;
 
 import java.io.Serializable;
 
@@ -8,16 +10,30 @@ import java.io.Serializable;
  */
 public class Book implements Serializable {
 
-
     private static final long serialVersionUID = -4704009876413943138L;
-    private Integer id;
+
+    @Excel(columnName = "ID", sort = 1)
+    private int id;
+
+    @Excel(columnName = "年龄", sort = 1)
+    private Integer age;
+
+    @Excel(columnName = "Name", sort = 2)
     private String name;
 
-    public Integer getId() {
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -34,6 +50,12 @@ public class Book implements Serializable {
 
     public Book(Integer id, String name) {
         this.id = id;
+        this.name = name;
+    }
+
+    public Book(int id, Integer age, String name) {
+        this.id = id;
+        this.age = age;
         this.name = name;
     }
 

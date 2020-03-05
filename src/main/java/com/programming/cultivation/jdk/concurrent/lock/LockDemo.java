@@ -1,4 +1,4 @@
-package com.programming.cultivation.concurrent.lock;
+package com.programming.cultivation.jdk.concurrent.lock;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

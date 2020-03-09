@@ -23,6 +23,7 @@ public class Client {
 //        socket.connect(new InetSocketAddress("localhost",9999));
         OutputStream outputStream = socket.getOutputStream();
         outputStream.write("我是客户端".getBytes());
-        socket.close();
+//        socket.close();
+//        Thread.sleep(3000);
     }
 }

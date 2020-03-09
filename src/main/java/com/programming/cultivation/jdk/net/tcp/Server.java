@@ -24,7 +24,7 @@ public class Server {
             System.out.println("远程端口：" + socket.getPort());
             System.out.println("本地端口：" + socket.getLocalPort());
             InputStream inputStream = socket.getInputStream();
-            byte[] data = new byte[inputStream.available()];
+            byte[] data = new byte[1024 * 60];
             inputStream.read(data);
             System.out.println(new String(data));
             socket.close();

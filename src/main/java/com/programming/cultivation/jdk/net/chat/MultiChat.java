@@ -7,9 +7,9 @@ import java.net.Socket;
 
 /**
  * 在线聊天室：服务端
- * 目标：实现一个客户端可以收发消息
+ * 目标：实现一个客户端可以收多发消息
  */
-public class Chat {
+public class MultiChat {
 
     public static void main(String[] args) throws Exception {
         System.out.println("------Server--------");
@@ -18,10 +18,10 @@ public class Chat {
         // 接收连接
         Socket client = server.accept();
         System.out.println("客户端建立了连接");
-        byte[] read = IOUtils.read(client.getInputStream());
-        // 将消息发回客户端
-        IOUtils.white(client.getOutputStream(), new String(read));
-
-
+        while (true) {
+            byte[] read = IOUtils.read(client.getInputStream());
+            // 将消息发回客户端
+            IOUtils.white(client.getOutputStream(), new String(read));
+        }
     }
 }

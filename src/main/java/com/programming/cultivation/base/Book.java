@@ -2,6 +2,7 @@ package com.programming.cultivation.base;
 
 import com.programming.cultivation.poi.common.anno.Excel;
 
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 /**
@@ -18,6 +19,7 @@ public class Book implements Serializable {
     @Excel(columnName = "年龄", sort = 1)
     private Integer age;
 
+    @NotBlank(message = "name不能为空")
     @Excel(columnName = "Name", sort = 2)
     private String name;
 

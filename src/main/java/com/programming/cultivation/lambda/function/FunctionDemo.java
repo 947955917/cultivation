@@ -11,6 +11,9 @@ public class FunctionDemo {
 
     public static void main(String[] args) {
         Function<Student, String> function = (s) -> s.getName();
+        Function<Student, String> function1 = s -> s.getName();
+        Student student = new Student();
+
 
         System.out.println(function.apply(new Student(11, "tom", 99)));
     }

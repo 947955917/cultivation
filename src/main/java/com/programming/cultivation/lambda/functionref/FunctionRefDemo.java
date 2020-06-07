@@ -1,42 +1,35 @@
 package com.programming.cultivation.lambda.functionref;
 
-import com.google.common.base.Supplier;
+import com.programming.cultivation.lambda.Student;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 public class FunctionRefDemo {
 
     public static void main(String[] args) {
-//        System.out.println(NameUtils.get(6));
-//        Function<Integer, String> function = NameUtils::get;
-//        System.out.println(function.apply(99));
+        // 静态方法引用
+        Consumer<String> consumer1 = (string) -> {
+            System.out.println(string);
+        };
+        Consumer<String> consumer2 = (s) -> System.out.println(s);
+        Consumer<String> consumer3 = NameUtils::print1;
+        Consumer<String> consumer4 = System.out::println;
 
-        List<String> stringList = Arrays.asList("a", "b", "c");
-        List<String> b = new ArrayList<>();
+        // ----------------------------------------------------------
+        // 静态方法引用
+        System.out.println("----------------------------------------------------------");
+        BiFunction<String, Integer, Student> biFunction = (x, y) -> new Student(y, x, y);
+        BiFunction<String, Integer, Student> biFunction2 = NameUtils::init;
+        System.out.println(biFunction.apply("jack", 33));
+        System.out.println(biFunction2.apply("jackson", 23));
 
-        stringList.forEach(b::add);
 
-        b.forEach(System.out::println);
+        // 实例方法引用
 
-//        Consumer<String> consumer5 = (s)->{
-//            NameUtils.print(s);
-//        };
-//        stringList.forEach(System.out::println);
-//        Consumer<String> consumer = (s) -> System.out.println(s);
-//        Consumer<String> consumer2 = System.out::println;
-//        Consumer<String> consumer3 = NameUtils::print;
-//        Consumer<String> consumer4 = NameUtils::print2;
-//        Consumer<String> consumer6 = NameUtils::print3;
-
-//        stringList.forEach(NameUtils::print1);
-//        System.out.println("--------------------------------");
-//        stringList.forEach(new NameUtils()::print2);
-//
-//        Supplier<NameUtils> aNew = NameUtils::new;
+        NameUtils nameUtils = new NameUtils();
+        Consumer<String> consumer = nameUtils::print2;
 
 
 
